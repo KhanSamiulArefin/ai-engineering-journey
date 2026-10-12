@@ -4,11 +4,18 @@ import pandas as pd
 
 from app.schemas import Customer
 
+from app.database import engine
+from app.models import Base
 
 app = FastAPI(
     title="Customer Churn Prediction API",
     description="This API predicts customer churn based on input features.",
     version="1.0"
+)
+
+
+Base.metadata.create_all(
+    bind=engine
 )
 
 
@@ -54,7 +61,18 @@ def predict(
 
         result = "Customer is likely to stay."
 
+    db = SessionLocal()
 
+
+    create_prediction(
+        db,
+        customer,
+        result,
+        churn_probability
+    )
+
+
+    db.close()
     return {
     "customer": customer.model_dump(),
     "prediction": result,
