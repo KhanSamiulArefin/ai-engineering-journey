@@ -60,3 +60,11 @@ def predict(
     "prediction": result,
     "churn_probability": round(float(churn_probability), 2)
 }
+@app.get("/model-info")
+def model_info():
+    return{
+        'model': 'Logistic Regression Churn Model',
+        'task': 'Predicts customer churn based on input features',
+        'version': '1.0',
+        'features': ['Age', 'Income', 'Purchase', 'Visits'],
+    }
