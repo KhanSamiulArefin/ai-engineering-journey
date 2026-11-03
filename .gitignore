@@ -1,0 +1,28 @@
+
+# Python environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Application logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Git cache
+.DS_Store
