@@ -4,7 +4,6 @@ __pycache__/
 *.pyc
 .git/
 .env
-*.ipynb_checkpoints
-data/
-mlruns/
-*.csv
+*.db
+app.log
+.pytest_cache/

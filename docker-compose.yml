@@ -1,6 +1,7 @@
 services:
   api:
-    build: .
+    image: khansamiularefin/customer-intelligence-api:1.0.0
+    pull_policy: always
     container_name: customer-api
     ports:
       - "8000:8000"
